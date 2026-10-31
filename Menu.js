@@ -232,7 +232,7 @@ function initMenu() {
                 showOverlay(projectsOverlay);
                 window.goToProjectsView?.();
             },
-            'M': () => {
+            'E': () => {
                 if (backBtn?.classList.contains('visible')) return;
                 if (projectsOverlay) projectsOverlay.classList.remove('visible');
                 hideMenuElements();
