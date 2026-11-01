@@ -98,8 +98,16 @@ loader.load('./models/dino.glb', (gltf) => {
 
     gltf.scene.scale.set(0.1, 0.1, 0.1); // size multiplier (higher = bigger)
     gltf.scene.position.set(-2, -4, 4); // x=left/right, y=up/down, z=forward/backward
-    gltf.scene.rotation.set(0, Math.PI / 1.25, 0); // x=pitch, y=yaw(which way it faces), z=roll (radians)
+    // Rotate the dino differently on mobile/tablet so its face shows; desktop keeps original angle
+    const desktopYaw = Math.PI / 1.25;
+    const mobileYaw = Math.PI / .8;
+    const yaw = window.innerWidth <= 1024 ? mobileYaw : desktopYaw;
+    gltf.scene.rotation.set(0, yaw, 0); // x=pitch, y=yaw(which way it faces), z=roll (radians)
     scene.add(gltf.scene);
+
+    // Keep a reference so we can re-apply the angle on resize
+    window.dinoModel = gltf.scene;
+    window.dinoYaw = { desktop: desktopYaw, mobile: mobileYaw };
 
     mixer = new THREE.AnimationMixer(gltf.scene);
     gltf.animations.forEach((clip) => {
@@ -247,5 +255,15 @@ window.goToProjectsView = goToProjectsView;
 window.goToMlView = goToMlView;
 window.goToAboutView = goToAboutView;
 window.backToMenu = backToMenu;
+
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    if (window.dinoModel && window.dinoYaw) {
+        const yaw = window.innerWidth <= 1024 ? window.dinoYaw.mobile : window.dinoYaw.desktop;
+        window.dinoModel.rotation.y = yaw;
+    }
+});
 
 animate();
