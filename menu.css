@@ -357,6 +357,7 @@
     color: #555;
     text-align: center;
     pointer-events: none;
+    white-space: nowrap;
 }
 
 /* Light Toggle */
@@ -477,17 +478,24 @@
 
     #hint {
         font-size: 10px;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+
+    #light-toggle {
+        flex-direction: column;
+        gap: 8px;
     }
 }
 
 /* Responsive - phone / tablet portrait */
 @media (max-width: 768px) {
     #title {
-        right: 50%;
-        transform: translateX(50%);
+        right: 16px;
         top: 20px;
         flex-direction: column;
-        text-align: center;
+        align-items: flex-end;
+        text-align: right;
         gap: 8px;
     }
 
@@ -497,7 +505,7 @@
     }
 
     .title-text {
-        text-align: center;
+        text-align: right;
     }
 
     .title-text h1 {
@@ -511,10 +519,9 @@
     }
 
     #description {
-        right: 50%;
-        transform: translateX(50%);
+        right: 16px;
         top: 120px;
-        text-align: center;
+        text-align: right;
         max-width: 88vw;
     }
 
@@ -523,11 +530,10 @@
     }
 
     #menu {
-        right: 50%;
-        transform: translateX(50%);
+        right: 16px;
         top: auto;
         bottom: 76px;
-        align-items: center;
+        align-items: flex-end;
         gap: 6px;
     }
 
@@ -537,8 +543,8 @@
         padding: 12px 18px;
         font-size: 19px;
         gap: 12px;
-        text-align: center;
-        justify-content: center;
+        text-align: right;
+        justify-content: flex-end;
     }
 
     .menu-item::before {
@@ -550,12 +556,10 @@
     }
 
     #contact {
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
+        right: 16px;
         bottom: 46px;
-        text-align: center;
-        white-space: normal;
+        text-align: right;
+        white-space: nowrap;
         max-width: 92vw;
         line-height: 1.5;
     }
@@ -570,15 +574,16 @@
     #hint {
         bottom: 12px;
         font-size: 10px;
-        letter-spacing: 1px;
-        padding: 0 12px;
-        max-width: 92vw;
+        letter-spacing: 0.5px;
+        padding: 0 8px;
+        white-space: nowrap;
     }
 
     #light-toggle {
         bottom: 12px;
         left: 12px;
         gap: 8px;
+        flex-direction: column;
     }
 
     .light-option {
@@ -658,8 +663,8 @@
         padding: 10px 14px;
         font-size: 17px;
         gap: 10px;
-        text-align: center;
-        justify-content: center;
+        text-align: right;
+        justify-content: flex-end;
     }
 
     .menu-item::before {
@@ -680,8 +685,10 @@
     }
 
     #hint {
-        font-size: 10px;
+        font-size: 9px;
         bottom: 10px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
     }
 
     .light-option {
