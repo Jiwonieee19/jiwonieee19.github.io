@@ -108,6 +108,7 @@ loader.load('./models/dino.glb', (gltf) => {
     // Keep a reference so we can re-apply the angle on resize
     window.dinoModel = gltf.scene;
     window.dinoYaw = { desktop: desktopYaw, mobile: mobileYaw };
+    window.dinoTargetYaw = yaw;
 
     mixer = new THREE.AnimationMixer(gltf.scene);
     gltf.animations.forEach((clip) => {
@@ -218,6 +219,13 @@ function animate() {
         light1.position.y = lightTarget.position.y + 3;
     }
 
+    // Smoothly tween the dino's yaw toward the target (responsive angle change)
+    if (window.dinoModel && typeof window.dinoTargetYaw === 'number') {
+        const cur = window.dinoModel.rotation.y;
+        const tgt = window.dinoTargetYaw;
+        window.dinoModel.rotation.y += (tgt - cur) * 0.06;
+    }
+
     controls.update();
     renderer.render(scene, camera);
 
@@ -262,7 +270,7 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     if (window.dinoModel && window.dinoYaw) {
         const yaw = window.innerWidth <= 1024 ? window.dinoYaw.mobile : window.dinoYaw.desktop;
-        window.dinoModel.rotation.y = yaw;
+        window.dinoTargetYaw = yaw;
     }
 });
 
