@@ -241,6 +241,44 @@
     font-size: 14px;
 }
 
+/* Responsive - tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .aboutme-content {
+        max-width: 92vw;
+        padding: 50px 30px 80px;
+        gap: 40px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .aboutme-bio {
+        font-size: 13px;
+    }
+
+    .education-card {
+        padding: 20px 24px;
+    }
+
+    .edu-details h3 {
+        font-size: 16px;
+    }
+
+    .tech-item {
+        padding: 10px 16px;
+    }
+
+    .tech-item span {
+        font-size: 12px;
+    }
+
+    .cert-card {
+        width: 260px;
+        height: 175px;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .aboutme-content {
