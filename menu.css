@@ -531,8 +531,9 @@
 
     #menu {
         right: 16px;
-        top: auto;
-        bottom: 96px;
+        top: 54%;
+        bottom: auto;
+        transform: translateY(-50%);
         align-items: flex-end;
         gap: 6px;
     }
@@ -659,7 +660,9 @@
 
     #menu {
         right: 16px;
-        bottom: 80px;
+        top: 54%;
+        bottom: auto;
+        transform: translateY(-50%);
         gap: 5px;
     }
 
