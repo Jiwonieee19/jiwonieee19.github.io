@@ -491,7 +491,7 @@
 /* Responsive - phone / tablet portrait */
 @media (max-width: 768px) {
     #title {
-        right: 16px;
+        right: 34px;
         top: 20px;
         flex-direction: column;
         align-items: flex-end;
@@ -519,7 +519,7 @@
     }
 
     #description {
-        right: 16px;
+        right: 34px;
         top: 120px;
         text-align: right;
         max-width: 88vw;
@@ -556,7 +556,7 @@
     }
 
     #contact {
-        right: 16px;
+        right: 34px;
         bottom: 46px;
         text-align: right;
         white-space: nowrap;
@@ -630,6 +630,10 @@
 }
 
 @media (max-width: 480px) {
+    #title {
+        right: 30px;
+    }
+
     #title h1 {
         font-size: 22px;
     }
@@ -644,6 +648,7 @@
     }
 
     #description {
+        right: 30px;
         top: 100px;
         max-width: 90vw;
     }
@@ -653,6 +658,7 @@
     }
 
     #menu {
+        right: 16px;
         bottom: 64px;
         gap: 5px;
     }
@@ -676,6 +682,7 @@
     }
 
     #contact {
+        right: 30px;
         bottom: 40px;
         max-width: 94vw;
     }
