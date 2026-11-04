@@ -25,10 +25,24 @@
     max-width: 1300px;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    padding: 60px 40px 80px;
+    padding: 0 40px 80px;
+    margin-top: 110px;
     display: flex;
     flex-direction: column;
     gap: 48px;
+}
+
+.aboutme-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.aboutme-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.aboutme-content::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
 }
 
 .aboutme-content::-webkit-scrollbar {
@@ -241,48 +255,11 @@
     font-size: 14px;
 }
 
-/* Responsive - tablet */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .aboutme-content {
-        max-width: 92vw;
-        padding: 50px 30px 80px;
-        gap: 40px;
-    }
-
-    .section-title {
-        font-size: 24px;
-    }
-
-    .aboutme-bio {
-        font-size: 13px;
-    }
-
-    .education-card {
-        padding: 20px 24px;
-    }
-
-    .edu-details h3 {
-        font-size: 16px;
-    }
-
-    .tech-item {
-        padding: 10px 16px;
-    }
-
-    .tech-item span {
-        font-size: 12px;
-    }
-
-    .cert-card {
-        width: 260px;
-        height: 175px;
-    }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .aboutme-content {
-        padding: 40px 20px 80px;
+        padding: 0 20px 80px;
+        margin-top: 60px;
         gap: 36px;
     }
 

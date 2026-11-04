@@ -197,7 +197,7 @@
 @media (max-width: 768px) {
     .projects-content {
         max-height: calc(100vh - 60px);
-        padding-top: 40px;
+        padding-top: 50px;
     }
 
     .projects-header {
