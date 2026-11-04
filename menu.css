@@ -532,7 +532,7 @@
     #menu {
         right: 16px;
         top: auto;
-        bottom: 76px;
+        bottom: 96px;
         align-items: flex-end;
         gap: 6px;
     }
@@ -659,7 +659,7 @@
 
     #menu {
         right: 16px;
-        bottom: 64px;
+        bottom: 80px;
         gap: 5px;
     }
 
